@@ -124,6 +124,7 @@ class rdtSegment(object):
             self.ACK_num = (data[2] + len(data[3:])) % 256
             if data[2] == last_ACK_num or last_ACK_num == -1:
                 sys.stdout.write("{}".format(data[3:]))
+                sys.stdout.flush()
                 return True
         else:
             pass
